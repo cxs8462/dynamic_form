@@ -1,19 +1,18 @@
 <template>
-  <el-input
+  <el-rate
     :value="data.value"
-    :placeholder="data.placeholder"
     @input="(e) => $emit('input', e)"
-    :type="data.type"
-    :readonly="data.readonly"
     :disabled="data.disabled"
-    :rows="data.rows"
+    :texts="data.texts"
+    :allow-half="data.allowHalf"
+    show-text
   >
-  </el-input>
+  </el-rate>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "item_rate",
   props: {
     data: {
       default: {},

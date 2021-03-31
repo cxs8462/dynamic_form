@@ -24,6 +24,9 @@ export default {
       state.list[state.select - 1] = copy;
       state.select--;
     },
+    cancelSelect(state) {
+      state.select = undefined;
+    },
     moveBotton(state) {
       const copy = state.list[state.select];
       state.list[state.select] = state.list[state.select + 1];

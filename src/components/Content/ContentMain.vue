@@ -23,11 +23,12 @@
         :label-width="item.labelWidth + 'px'"
         :rules="item.rules"
         :required="item.require"
+        class="formCenter"
       >
         <component
           :is="`item_${item.type}`"
           @input="(e) => update(e, index)"
-          v-bind="item"
+          :data="item"
         ></component>
       </el-form-item>
     </el-col>
@@ -35,11 +36,12 @@
 </template>
 
 <script>
-import item_text from "@/components/Component/item_text";
-import item_textarea from "@/components/Component/item_textarea";
+import item_components from "@/until/item_components";
 export default {
   name: "ContentMain",
-  components: { item_text, item_textarea },
+  components: {
+    ...item_components,
+  },
   data() {
     return {};
   },
@@ -56,7 +58,6 @@ export default {
       this.$store.commit("form_item/update", { index, key: "value", value });
     },
     selectItem(index) {
-      console.log(index);
       this.$store.commit("form_item/setSelect", index);
     },
   },
@@ -65,13 +66,17 @@ export default {
 
 <style lang="less" scoped>
 .select {
-  padding: 5px;
   cursor: pointer;
   &:hover {
     box-shadow: 0px 0px 3px 1px #409eff;
   }
 }
+.formCenter {
+  padding: 10px;
+  margin: 3px;
+}
 .selected {
   box-shadow: 0px 0px 1px 1px #409eff;
+  background-color: #ececec;
 }
 </style>

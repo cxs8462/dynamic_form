@@ -1,19 +1,17 @@
 <template>
-  <el-input
+  <el-time-picker
     :value="data.value"
     :placeholder="data.placeholder"
-    @input="(e) => $emit('input', e)"
-    :type="data.type"
     :readonly="data.readonly"
+    @input="(e) => $emit('input', e)"
     :disabled="data.disabled"
-    :rows="data.rows"
   >
-  </el-input>
+  </el-time-picker>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "item_time",
   props: {
     data: {
       default: {},

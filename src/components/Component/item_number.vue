@@ -1,19 +1,19 @@
 <template>
-  <el-input
+  <el-input-number
     :value="data.value"
-    :placeholder="data.placeholder"
     @input="(e) => $emit('input', e)"
-    :type="data.type"
-    :readonly="data.readonly"
     :disabled="data.disabled"
-    :rows="data.rows"
+    :step="data.step"
+    :min="data.min"
+    :max="data.max"
+    :precision="data.precision"
   >
-  </el-input>
+  </el-input-number>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "Item_number",
   props: {
     data: {
       default: {},

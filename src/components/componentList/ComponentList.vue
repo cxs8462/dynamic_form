@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     dragstart(item) {
-      this.$store.commit("form_item/setMoveItem",item)
+      this.$store.commit("form_item/setMoveItem", item);
     },
   },
 };
@@ -37,13 +37,13 @@ export default {
 
 <style lang="less" scoped>
 .componentList {
-  display: flex;
   .listItem {
     padding: 7px;
     background-color: #ecf0f1;
     font-size: 13px;
     border: 3px dashed #909399;
     margin: 5px;
+    display: inline-block;
     &:hover {
       color: #3498db;
       cursor: move;

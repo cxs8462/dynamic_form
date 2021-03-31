@@ -1,19 +1,17 @@
 <template>
-  <el-input
+  <el-slider
     :value="data.value"
-    :placeholder="data.placeholder"
+    :min="data.min"
+    :show-stops="data.showStops"
     @input="(e) => $emit('input', e)"
-    :type="data.type"
-    :readonly="data.readonly"
+    :step="data.step"
     :disabled="data.disabled"
-    :rows="data.rows"
-  >
-  </el-input>
+  ></el-slider>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "item_slider",
   props: {
     data: {
       default: {},

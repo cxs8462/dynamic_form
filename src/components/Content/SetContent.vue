@@ -1,6 +1,6 @@
 <template>
   <div class="setContent">
-    <el-tabs type="card" v-model="tabs">
+    <el-tabs type="card" v-model="tabs" stretch>
       <el-tab-pane label="表单配置" name="form">
         <el-form label-width="100px">
           <el-form-item label="标签位置">
@@ -66,8 +66,12 @@
         label="表单项"
         name="form_item"
       >
+        <el-divider content-position="center"> 操作 </el-divider>
         <el-row>
-          <el-col align="center" :span="8"
+          <el-col align="center" :span="6"
+            ><el-button @click="cancel">取消</el-button></el-col
+          >
+          <el-col align="center" :span="6"
             ><el-button
               type="primary"
               :disabled="form_item.select === 0"
@@ -75,7 +79,7 @@
               >上移</el-button
             ></el-col
           >
-          <el-col align="center" :span="8"
+          <el-col align="center" :span="6"
             ><el-button
               type="primary"
               :disabled="form_item.select === form_item.list.length - 1"
@@ -83,12 +87,13 @@
               >下移</el-button
             ></el-col
           >
-          <el-col align="center" :span="8"
+          <el-col align="center" :span="6"
             ><el-button type="danger" @click="delFormItem"
               >删除</el-button
             ></el-col
           >
         </el-row>
+        <el-divider content-position="center"> 配置 </el-divider>
         <el-form
           style="margin-top: 10px"
           label-width="70px"
@@ -106,15 +111,6 @@
               :value="item.fieldName"
             />
           </el-form-item>
-          <el-form-item label="只读">
-            <el-radio-group
-              :value="item.readonly"
-              @input="(i) => updateField('readonly', i)"
-            >
-              <el-radio-button :label="true">只读</el-radio-button>
-              <el-radio-button :label="false">可编辑</el-radio-button>
-            </el-radio-group>
-          </el-form-item>
           <el-form-item label="禁用">
             <el-radio-group
               :value="item.disabled"
@@ -123,12 +119,6 @@
               <el-radio-button :label="true">是</el-radio-button>
               <el-radio-button :label="false">否</el-radio-button>
             </el-radio-group>
-          </el-form-item>
-          <el-form-item label="默认值">
-            <el-input
-              @input="(i) => updateField('value', i)"
-              :value="item.value"
-            />
           </el-form-item>
           <el-form-item label="必填">
             <el-radio-group
@@ -166,13 +156,12 @@
 </template>
 
 <script>
-import set_text from "@/components/Set/set_text";
-import set_textarea from "@/components/Set/set_textarea";
 import { formSelect } from "@/formconfig/form";
+import set_components from "@/until/set_components";
 
 export default {
   name: "SetContent",
-  components: { set_text, set_textarea },
+  components: { ...set_components },
   computed: {
     form() {
       return this.$store.state.form;
@@ -191,6 +180,8 @@ export default {
       handler(val) {
         if (val !== undefined) {
           this.tabs = "form_item";
+        } else {
+          this.tabs = "form";
         }
       },
     },
@@ -203,6 +194,9 @@ export default {
     };
   },
   methods: {
+    cancel() {
+      this.$store.commit("form_item/cancelSelect");
+    },
     delFormItem() {
       this.$store.commit("form_item/delList");
     },

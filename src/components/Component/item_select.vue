@@ -1,22 +1,24 @@
 <template>
-  <el-input
+  <el-select
     :value="data.value"
     :placeholder="data.placeholder"
     @input="(e) => $emit('input', e)"
-    :prefix-icon="data.icon"
-    :type="data.type"
-    :readonly="data.readonly"
     :disabled="data.disabled"
     :clearable="data.clearable"
+    :multiple="data.multiple"
   >
-    <template v-if="data.prepend" slot="prepend">{{ data.prepend }}</template>
-    <template v-if="data.append" slot="append">{{ data.append }}</template>
-  </el-input>
+    <el-option
+      v-for="(item, index) in data.options"
+      :key="item.value + index"
+      :label="item.label"
+      :value="item.value"
+    ></el-option>
+  </el-select>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "Item_select",
   props: {
     data: {
       default: {},

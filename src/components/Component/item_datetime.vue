@@ -1,19 +1,17 @@
 <template>
-  <el-input
+  <el-date-picker
     :value="data.value"
     :placeholder="data.placeholder"
-    @input="(e) => $emit('input', e)"
-    :type="data.type"
     :readonly="data.readonly"
+    @input="(e) => $emit('input', e)"
     :disabled="data.disabled"
-    :rows="data.rows"
   >
-  </el-input>
+  </el-date-picker>
 </template>
 
 <script>
 export default {
-  name: "Item_input",
+  name: "item_datetime",
   props: {
     data: {
       default: {},

@@ -53,7 +53,7 @@
 <script>
 import IconSelect from "@/components/IconSelect";
 export default {
-  name: "set_text",
+  name: "set_password",
   components: { IconSelect },
   props: {
     data: {
