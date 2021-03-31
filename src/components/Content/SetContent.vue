@@ -149,6 +149,7 @@
             :data="item"
             @updateField="updateField"
           />
+          <regxp :data="item" @updateField="updateField" />
         </el-form>
       </el-tab-pane>
     </el-tabs>
@@ -158,10 +159,11 @@
 <script>
 import { formSelect } from "@/formconfig/form";
 import set_components from "@/until/set_components";
+import Regxp from "@/components/common/Regxp";
 
 export default {
   name: "SetContent",
-  components: { ...set_components },
+  components: { Regxp, ...set_components },
   computed: {
     form() {
       return this.$store.state.form;

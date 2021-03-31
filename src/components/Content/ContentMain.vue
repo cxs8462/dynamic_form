@@ -21,7 +21,6 @@
       <el-form-item
         :label="item.label"
         :label-width="item.labelWidth + 'px'"
-        :rules="item.rules"
         :required="item.require"
         class="formCenter"
       >

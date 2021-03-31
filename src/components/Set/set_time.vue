@@ -1,6 +1,6 @@
 <template>
   <div class="set_time">
-    <el-form-item label="时间">
+    <el-form-item label="默认值">
       <el-time-picker @input="(i) => update('value', i)" :value="data.value" />
     </el-form-item>
     <el-form-item label="只读">

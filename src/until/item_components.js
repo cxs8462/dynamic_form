@@ -12,6 +12,9 @@ import item_time from "@/components/Component/item_time";
 import item_datetimepicker from "@/components/Component/item_datetimepicker";
 import item_datetime from "@/components/Component/item_datetime";
 import item_rate from "@/components/Component/item_rate";
+import item_upload from "@/components/Component/item_upload";
+import item_colorpicker from "@/components/Component/item_colorpicker";
+import item_button from "@/components/Component/item_button";
 
 export default {
   item_text,
@@ -28,4 +31,7 @@ export default {
   item_datetimepicker,
   item_datetime,
   item_rate,
+  item_upload,
+  item_colorpicker,
+  item_button,
 };

@@ -9,6 +9,26 @@ export const formSelect = {
     { label: "小", value: "small " },
     { label: "正常", value: "medium " },
   ],
+  upload_listType: [
+    { label: "文本", value: "text" },
+    { label: "图片", value: "picture " },
+    { label: "图片列表", value: "picture-card " },
+  ],
+  buttonType: [
+    { label: "默认", value: "" },
+    { label: "文字", value: "text" },
+    { label: "主要", value: "primary" },
+    { label: "成功", value: "success" },
+    { label: "信息", value: "info" },
+    { label: "警告", value: "warning" },
+    { label: "危险", value: "danger" },
+  ],
+  buttonStyle: [
+    { label: "默认", value: "" },
+    { label: "朴素", value: "plain" },
+    { label: "圆角", value: "round" },
+    { label: "圆形", value: "circle" },
+  ],
 };
 
 export const form_item_default = {
@@ -264,6 +284,53 @@ export const form_item_default = {
     texts: ["极差", "失望", "一般", "满意", "惊喜"],
     btnConfig: {
       name: "评分",
+    },
+  },
+  upload: {
+    type: "upload",
+    label: "上传",
+    disabled: false,
+    value: [],
+    fieldName: "字段名",
+    span: 24,
+    labelWidth: 100,
+    require: true,
+    action: "",
+    listType: "text",
+    autoUpload: true,
+    limit: 3,
+    tip: "上传提示",
+    test: "disabled",
+    btnConfig: {
+      name: "上传",
+    },
+  },
+  colorpicker: {
+    type: "colorpicker",
+    label: "颜色选择",
+    disabled: false,
+    value: "",
+    fieldName: "字段名",
+    rules: [],
+    span: 24,
+    labelWidth: 100,
+    require: true,
+    showAlpha: false,
+    btnConfig: {
+      name: "颜色选择器",
+    },
+  },
+  button: {
+    type: "button",
+    label: "按钮",
+    disabled: false,
+    set: { label: "按钮", type: "primary", style: "", icon: "" },
+    fieldName: "字段名",
+    span: 24,
+    labelWidth: 100,
+    require: false,
+    btnConfig: {
+      name: "按钮",
     },
   },
 };

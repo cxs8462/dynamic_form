@@ -12,6 +12,9 @@ import set_time from "@/components/Set/set_time";
 import set_datetimepicker from "@/components/Set/set_datetimepicker";
 import set_datetime from "@/components/Set/set_datetime";
 import set_rate from "@/components/Set/set_rate";
+import set_upload from "@/components/Set/set_upload";
+import set_colorpicker from "@/components/Set/set_colorpicker";
+import set_button from "@/components/Set/set_button";
 
 export default {
   set_text,
@@ -28,4 +31,7 @@ export default {
   set_datetimepicker,
   set_datetime,
   set_rate,
+  set_upload,
+  set_colorpicker,
+  set_button,
 };
